@@ -4,6 +4,13 @@ import {
   Route,
   NavLink
 } from 'react-router-dom';
+import {
+  FormikAbstractionPage,
+  FormikBasicPage,
+  FormikYupPage,
+  FormikComponentsPage,
+  RegisterPage
+} from '../03-forms/pages';
 
 import logo from '../logo.svg';
 
@@ -15,13 +22,19 @@ export const Navigation = () => {
             <img src={ logo } alt="React Logo" />
           <ul>
             <li>
-              <NavLink to="/" activeClassName="nav-active" exact>Home</NavLink>
+              <NavLink to="/" activeClassName="nav-active" exact>Register</NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="nav-active" exact>About</NavLink>
+              <NavLink to="/formik-basic" activeClassName="nav-active" exact>Formik Basic</NavLink>
             </li>
             <li>
-              <NavLink to="/users" activeClassName="nav-active" exact>Users</NavLink>
+              <NavLink to="/formik-abstraction" activeClassName="nav-active" exact>Formik Abstraction</NavLink>
+            </li>
+            <li>
+              <NavLink to="/formik-components" activeClassName="nav-active" exact>Formik Components</NavLink>
+            </li>
+            <li>
+              <NavLink to="/formik-yup" activeClassName="nav-active" exact>Formik Yup</NavLink>
             </li>
           </ul>
         </nav>
@@ -29,14 +42,20 @@ export const Navigation = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <h1>About</h1>
+          <Route path="/formik-basic">
+            <FormikBasicPage />
           </Route>
-          <Route path="/users">
-            <h1>Users</h1>
+          <Route path="/formik-abstraction">
+            <FormikAbstractionPage />
+          </Route>
+          <Route path="/formik-components">
+            <FormikComponentsPage />
+          </Route>
+          <Route path="/formik-yup">
+            <FormikYupPage />
           </Route>
           <Route path="/">
-            <h1>Home</h1>
+            <RegisterPage />
           </Route>
         </Switch>
       </div>
